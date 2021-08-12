@@ -1,6 +1,6 @@
 # Remove-BG-Bot
 
-A photo background remover telegram bot with pyrogram framework.
+A image background remover telegram bot with pyrogram framework.
 
 ---
 
