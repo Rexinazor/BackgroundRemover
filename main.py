@@ -19,7 +19,7 @@ Rexinazor = Client(
 )
 
 START_TEXT = """
-Hello {}, I am a photo background remover bot. Send me a photo I will send the photo without background.
+Hello {}, I am a image background remover bot. Send me a photo I will send the photo without background.
 
 Made by [BioHazard Bots](t.me/BioHazard_Bots).
 """
