@@ -2,7 +2,7 @@
     "name": "Media_BG-Remover",
     "description": "A photo background remover telegram bot with pyrogram framework.",
     "repository": "https://github.com/Rexinazor/Media_BG-Remover",
-    "keywords": ["removebg api", "photo", "background remover","telegram bot"],
+    "keywords": ["removebg api", "background remover","telegram bot"],
     "env": {
         "BOT_TOKEN": {
             "description": "Your Bot token from @Botfather"
