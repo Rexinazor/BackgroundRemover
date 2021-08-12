@@ -1,8 +1,7 @@
-# Made with python3
-# (C) @shrvan42
-# Copyright permission under MIT License
-# All rights reserved by FayasNoushad
-# License -> https://github.com/shrvan42/Remove-BG-Bot/blob/main/LICENSE
+#Made with Python3
+#(C) Rexinazor
+#Copyright permission under MIT License
+#License -> https://github.com/Rexinazor/Media_BG-Remover/blob/main/LICENSE
 
 import os
 import requests
@@ -12,7 +11,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 API = os.environ["REMOVEBG_API"]
 IMG_PATH = "./DOWNLOADS"
 
-Shrvan42 = Client(
+Rexinazor = Client(
     "Remove Background Bot",
     bot_token = os.environ["BOT_TOKEN"],
     api_id = int(os.environ["API_ID"]),
@@ -22,25 +21,25 @@ Shrvan42 = Client(
 START_TEXT = """
 Hello {}, I am a photo background remover bot. Send me a photo I will send the photo without background.
 
-Made by [TgxBotz](t.me/tgxbotz_chat).
+Made by [BioHazard Bots](t.me/BioHazard_Bots).
 """
 HELP_TEXT = """
 - Just send me a photo
 - I will download it
 - I will send the photo without background
 
-Made by [TgxBotz](t.me/tgxbotz_chat).
+Made by [BioHazard Bots](t.me/BioHazard_Bots).
 """
 ABOUT_TEXT = """
 - **Bot :** `Backround Remover Bot`
-- **Creator :** [SHRVAN](https://t.me/SHRVAN42)
-- **Channel :** [TGxBOTZ](https://t.me/tgxbotz_update)
-- **Source :** [Here](https://github.com/shrvan42/Remove-BG-Bot/tree/main)
+- **Creator :** [Divyash](https://t.me/Avrazel)
+- **Channel :** [BioHazard Bots](https://t.me/BioHazard_Bots)
+- **Fedration :** [BioHazard Network](https://t.me/TheHazardNetwork)
 """
 START_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Channel🇮🇳', url='https://telegram.me/tgxbotz_update'),
-        InlineKeyboardButton('Repo🇮🇳', url='https://github.com/shrvan42/Remove-BG-Bot')
+        InlineKeyboardButton('Updates', url='https://telegram.me/BioHazard_Bots'),
+        InlineKeyboardButton('Support', url='https://telegram.me/BHZBot_Support')
         ],[
         InlineKeyboardButton('Help', callback_data='help'),
         InlineKeyboardButton('About', callback_data='about'),
@@ -69,11 +68,11 @@ ERROR_BUTTONS = InlineKeyboardMarkup(
     )
 BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Join Updates Channel', url='https://t.me/tgxbotz_update')
+        InlineKeyboardButton('Join Updates Channel', url='https://t.me/BioHazard_Bots')
         ]]
     )
 
-@Shrvan42.on_callback_query()
+@Rexinazor.on_callback_query()
 async def cb_data(bot, update):
     if update.data == "home":
         await update.message.edit_text(
@@ -96,7 +95,7 @@ async def cb_data(bot, update):
     else:
         await update.message.delete()
 
-@Shrvan42.on_message(filters.private & filters.command(["start"]))
+@Rexinazor.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
     await update.reply_text(
         text=START_TEXT.format(update.from_user.mention),
@@ -104,7 +103,7 @@ async def start(bot, update):
         reply_markup=START_BUTTONS
     )
 
-@Shrvan42.on_message(filters.private & (filters.photo | filters.document))
+@Rexinazor.on_message(filters.private & (filters.photo | filters.document))
 async def remove_background(bot, update):
     if not API:
         await update.reply_text(
@@ -169,4 +168,4 @@ async def remove_background(bot, update):
             reply_markup=ERROR_BUTTONS
         )
 
-Shrvan42.run()
+Rexinazor.run()
